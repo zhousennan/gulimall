@@ -4,8 +4,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 /**
  * 品牌; InnoDB free: 8192 kB
@@ -22,11 +24,14 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
+	@NotNull(message = "修改必须不为空")
+	@Null(message = "新增必须为空")
 	@TableId
 	private Long brandId;
 	/**
 	 * 品牌名
 	 */
+	@NotEmpty(message = "品牌名称必须提交")
 	private String name;
 	/**
 	 * 品牌logo地址

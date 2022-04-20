@@ -1,20 +1,14 @@
 package com.zsn.gulimall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import com.zsn.gulimall.product.service.CommentReplayService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.zsn.gulimall.product.entity.CommentReplayEntity;
 import com.zsn.common.utils.PageUtils;
 import com.zsn.common.utils.R;
+import com.zsn.gulimall.product.entity.CommentReplayEntity;
+import com.zsn.gulimall.product.service.CommentReplayService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
@@ -46,7 +40,7 @@ public class CommentReplayController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-   // @RequiresPermissions("product:commentreplay:info")
+    // @RequiresPermissions("product:commentreplay:info")
     public R info(@PathVariable("id") Long id){
 		CommentReplayEntity commentReplay = commentReplayService.getById(id);
 
@@ -57,7 +51,7 @@ public class CommentReplayController {
      * 保存
      */
     @RequestMapping("/save")
-   // @RequiresPermissions("product:commentreplay:save")
+    // @RequiresPermissions("product:commentreplay:save")
     public R save(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.save(commentReplay);
 
@@ -68,7 +62,7 @@ public class CommentReplayController {
      * 修改
      */
     @RequestMapping("/update")
-    //@RequiresPermissions("product:commentreplay:update")
+    // @RequiresPermissions("product:commentreplay:update")
     public R update(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.updateById(commentReplay);
 
@@ -79,7 +73,7 @@ public class CommentReplayController {
      * 删除
      */
     @RequestMapping("/delete")
-   // @RequiresPermissions("product:commentreplay:delete")
+    // @RequiresPermissions("product:commentreplay:delete")
     public R delete(@RequestBody Long[] ids){
 		commentReplayService.removeByIds(Arrays.asList(ids));
 
