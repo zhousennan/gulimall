@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.zsn.gulimall</groupId>
-    <artifactId>guilimall-product</artifactId>
+    <artifactId>gulimall-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>guilimall-product</name>
     <description>商品服务</description>
