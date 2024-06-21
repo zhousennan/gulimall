@@ -18,9 +18,20 @@
         <module>gulimall-coupon</module>
         <module>gulimall-ware</module>
         <module>gulimall-member</module>
-<!--        <module>gulimall-gateway</module>-->
+        <module>gulimall-gateway</module>
     </modules>
+    <properties>
 
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.encoding>UTF-8</project.encoding>
+        <jdk.version>1.8</jdk.version>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.package.skip>true</maven.package.skip>
+    </properties>
 
 
 </project>
