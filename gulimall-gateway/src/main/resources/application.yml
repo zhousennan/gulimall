@@ -2,19 +2,28 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: baidu_route
-          uri: http://www.baidu.com
-          predicates:
-            - Query=url,baidu
-
-        - id: test_route
-          uri: http://www.qq.com
-          predicates:
-            - Query=url,qq
+#        - id: baidu_route
+#          uri: http://www.baidu.com
+#          predicates:
+#            - Query=url,baidu
+#
+#        - id: test_route
+#          uri: http://www.qq.com
+#          predicates:
+#            - Query=url,qq
         - id: product_route
           uri: lb://gulimall-product
           predicates:
             - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+
+
+        - id: coupon_route
+          uri: lb://gulimall-coupon
+          predicates:
+            - Path=/api/coupon/**
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
